@@ -1,6 +1,6 @@
-Git is a version control system.
-Git is free software
-
+ npm install bable-cli  -g
+ npm install
+ Npm run dev 
 
 
 
