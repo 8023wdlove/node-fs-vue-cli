@@ -4,7 +4,7 @@ let router = route.default.routers
 let fs = require('fs')
 let num = 0
 let filenum = 0
-for (let key in router) { // 循环创建文件夹
+for (let key in router) { // 循环创建文件夹1
   // num = num + 1
   if (typeof router[key] !== 'string') {
     let mkdirOutPath = './src/page/' + key // 最外层文件夹路径
