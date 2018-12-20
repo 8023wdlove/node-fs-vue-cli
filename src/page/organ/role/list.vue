@@ -11,86 +11,82 @@
 
 <script>
   export default {
-    watch: {
-      filterText(val) {
-        this.$refs.tree2.filter(val);
-      }
-    },
-
-    methods: {
-      filterNode(value, data) {
-        if (!value) return true;
-        return data.label.indexOf(value) !== -1;
-      }
-    },
-
     data() {
       return {
         filterText: '',
         data2: [
-    {
-        "id": "1",
-        "label": "顶级分类",
-        "pId": "0",
-        "children": [
-            {
-                "id": "2",
-                "label": "一级分类",
-                "pId": "1",
-                "children": [
-                    {
-                        "id": "HR1812131224110",
-                        "label": "第四个模板"
-                    },
-                    {
-                        "id": "3",
-                        "label": "二级分类",
-                        "pId": "2",
-                        "children": [
-                            {
-                                "id": "HR1812131224109",
-                                "label": "第四个模板",
-                                "pId": "3",
-                                "children": [
-                                    {
-                                        "id": "HR1812131224108",
-                                        "label": "第四个模板"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": "HR1812131224111",
-        "label": "第四个模板"
-    },
-    {
-        "id": "HR2812131224111",
-        "label": "第四个模板"
-    },
-    {
-        "id": "HR3812131224111",
-        "label": "第四个模板"
-    },
-    {
-        "id": "HR4812131224111",
-        "label": "第四个模板"
-    },
-    {
-        "id": "HR5812131224111",
-        "label": "第四个模板"
-    }
-]
+        {
+            "id": "1",
+            "label": "顶级分类",
+            "pId": "0",
+            "children": [
+                {
+                    "id": "2",
+                    "label": "毛线"
+                },
+                {
+                    "id": "4",
+                    "label": "粗线"
+                },
+                {
+                    "id": "2",
+                    "label": "次级分类",
+                    "pId": "1",
+                    "children": [
+                        {
+                            "id": "1",
+                            "label": "电线"
+                        }
+                    ]
+                },
+                {
+                    "id": "3",
+                    "label": "次级分类",
+                    "pId": "1",
+                    "children": [
+                        {
+                            "id": "3",
+                            "label": "细线"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "label": "顶级分类",
+            "pId": "0"
+        }
+    ]
 ,
         defaultProps: {
           children: 'children',
           label: 'label'
+        //         function(data,node){
+        //       console.log(data,node)
+        //       if(data.pId ||data.pId === 0){
+        //           return data.label
+        //       }else{
+        //           node.visible = false;
+        //       }
+        //   }
         }
       };
+    },
+    mounted () {
+        this.$refs.tree2.filter('val');
+    },
+    methods: {
+        filterNode (value, data ,ff) {
+            // return false
+            console.log(value, data, ff,88888)
+            if(data.pId || data.pId ==='0'){
+                return true
+            }
+        },
+        aa (data,node){
+            console.log(data,node)
+        }
     }
   };
 </script>
