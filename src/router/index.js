@@ -15,6 +15,9 @@ let routers = {
   }
 }
 let routes = []
+routes.push({
+   path: '/', redirect: '/organ/role'
+});
 for (let key in routers) {
   if (typeof routers[key] !== 'string') {
     for (let item in routers[key]) {

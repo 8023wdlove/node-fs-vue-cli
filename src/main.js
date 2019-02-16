@@ -15,6 +15,16 @@ let router = routes.routes
 Vue.prototype.$axios = axios;
 
 Vue.config.productionTip = false
+// 注册一个全局自定义指令 `v-focus`
+Vue.directive('focus', {
+  // 当被绑定的元素插入到 DOM 中时……
+  inserted: function (el, binding, vnode) {
+    // 聚焦元素
+    console.log(el, 888);
+    el.focus();
+    el.style.backgroundColor='green'; 
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({
