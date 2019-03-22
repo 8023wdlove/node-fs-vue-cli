@@ -5,6 +5,12 @@ import App from './App'
 import axios from 'axios'
 // import router from './router'
 import routes from '@/router/index.js'
+var Parse = require('parse')
+Parse.initialize('b32h7SrhRXGiD3Ubvt2KQHtiR3VPrPgYWIxO3l5Z')
+Parse.serverURL = 'https://gesoo.herokuapp.com/parse'
+console.log(Parse._getInstallationId().then((res)=>{
+  console.log(res,888)
+}),Parse,77888)
 import ElementUI from 'element-ui'
 
 import '@assets/styles/default.css'
