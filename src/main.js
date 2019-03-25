@@ -19,6 +19,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
 let router = routes.routes
 Vue.prototype.$axios = axios;
+Vue.prototype.$Parse = Parse;
 
 Vue.config.productionTip = false
 // 注册一个全局自定义指令 `v-focus`

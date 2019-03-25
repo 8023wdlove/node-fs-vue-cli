@@ -32,6 +32,32 @@ export default {
         })
       }
     }
+  },
+  created (){
+    this.login();
+  },
+  methods:{
+    login () {
+      let that = this;
+      this.$axios.post('https://gesoo2.herokuapp.com/parse/functions/userLogin',{
+         username: 'fxchou123',
+        password: '123456',
+        language: 'cn'
+      },
+      {headers: {
+      "Content-Type": "application/json",
+      "X-Parse-Application-Id":"b32h7SrhRXGiD3Ubvt2KQHtiR3VPrPgYWIxO3l5Z"
+      }}).then((res)=>{
+        console.log(res.data.result.token)
+        that.$Parse.User.become(res.data.result.token).then((success) => {
+        console.log(success, 8888)
+        console.log(that.$Parse.User)
+      }, (err) => {
+        console.log(err, 899000)
+      })
+      })
+    }
+    
   }
 }
 </script>
