@@ -45,7 +45,7 @@ export default {
   //   background:gold;
   // }
   .Main{
-    // background:burlywood;
+    background:burlywood;
   }
   .Footer{
     background:cyan;
