@@ -1,6 +1,8 @@
 <template>
   <div>
     <span>我是商品资料列表</span>
+    <span>{{setPVCheck}}</span>
+    <button @click="modifyPv(34567890)">改变</button>
     <div>
        <el-input v-model="input" placeholder="请输入内容"></el-input>
        <el-checkbox-group v-model="checkList">
@@ -10,6 +12,7 @@
   </div>
 </template>
 <script>
+import {mapMutations, mapState} from 'vuex'
 export default {
   /* eslint-disable */
   data () {
@@ -18,6 +21,13 @@ export default {
       checkList: [],
       input: ''
     }
+  },
+  computed:{
+    // ...mapState(['setPVCheck'])
+    setPVCheck(){
+      return this.$store.state.setPVCheck;
+    }
+
   },
   watch: {
     input (val, old) {
@@ -37,6 +47,9 @@ export default {
     this.login();
   },
   methods:{
+    ...mapMutations({
+      modifyPv:'setPVCheck'
+    }),
     login () {
       let that = this;
       this.$axios.post('https://gesoo2.herokuapp.com/parse/functions/userLogin',{

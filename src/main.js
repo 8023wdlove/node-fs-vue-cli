@@ -11,6 +11,7 @@ Parse.serverURL = 'https://gesoo.herokuapp.com/parse'
 console.log(Parse._getInstallationId().then((res)=>{
   console.log(res,888)
 }),Parse,77888)
+import store from './store';
 import ElementUI from 'element-ui'
 
 import '@assets/styles/default.css'
@@ -37,6 +38,7 @@ Vue.directive('focus', {
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
