@@ -17,7 +17,7 @@
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "parse": "^2.2.1",
-    "tinymce": "^4.9.2",
+    "tinymce": "^4.9.7",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "2.4.0"
